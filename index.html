@@ -148,13 +148,22 @@ dialog::backdrop{background:rgba(18,26,43,.6);backdrop-filter:blur(3px)}
 @media (max-width:760px){.janela{grid-template-columns:1fr;max-height:calc(100dvh - 20px)}.galeria{padding:14px}.galeria .principal{aspect-ratio:1/1;border-radius:18px}.info{padding:22px 20px}dialog{margin:auto 0 0}}
 
 @media (max-width:720px){.grade{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}.peca h3{font-size:19px}.preco{font-size:21px}.peca .resumo{font-size:13.5px}.cab-secao h2{font-size:27px}.selo{font-size:11px;padding:4px 8px}.selos{left:10px;bottom:10px}}
+.redes{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:6px 0 18px}
+.rede{display:inline-flex;align-items:center;gap:10px;padding:10px 18px 10px 12px;border-radius:999px;text-decoration:none;color:#fff;box-shadow:var(--sombra);transition:transform .15s}
+.rede:hover{transform:translateY(-2px)}
+.rede svg{width:34px;height:34px;padding:6px;border-radius:50%;background:rgba(255,255,255,.18);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.rede span{display:flex;flex-direction:column;text-align:left;line-height:1.15}
+.rede b{font-weight:600;font-size:15px}.rede small{font-size:12.5px;opacity:.85}
+.rede-insta{background:var(--manto-fundo);color:var(--papel)}
+.rede-zap{background:#1F8F55}
+.rodape .rede{color:#fff}.rodape .rede-insta{color:var(--papel)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 </style>
 </head>
 <body>
 <div id="app"></div>
-<script type="application/json" id="dados">{"loja":{"whatsapp":"","instagram":"@tercosdejesusemaria","titulo":"Terços feitos à mão, conta por conta","mensagem":"Cada peça é montada com carinho e oração, do jeito que você imaginou: com nome, nas cores que combinam com você ou para presentear em batizados, crismas e primeiras comunhões.","pagamento":"Pagamento por Pix. Você recebe o orçamento com a chave e o QR Code.","prazo":"Produção em até 10 dias úteis após o pagamento.","envio":"Enviamos para todo o Brasil."},"pecas":[{"id":"ptradicional","nome":"Terço tradicional de madeira","categoria":"Terços","descricao":"Contas de madeira, crucifixo de metal e medalha de Nossa Senhora. Um terço simples e firme para rezar todos os dias.","materiais":"Contas de madeira 8 mm, crucifixo de metal, medalha de Nossa Senhora","medidas":"","cores":"","personalizacao":"","preco":44,"atacado":[{"qtd":10,"preco":34.5},{"qtd":20,"preco":32},{"qtd":50,"preco":30}],"fotos":[],"status":"publicado","novidade":false,"personalizavel":false,"destaque":true,"criado":3},{"id":"pcristal","nome":"Terço de cristal com nome","categoria":"Terços com nome","descricao":"Contas de cristal com o nome que você escolher em miçangas de letra. Um presente único para quem você ama.","materiais":"Contas de cristal 8 mm, miçangas de letra, crucifixo e medalha","medidas":"","cores":"","personalizacao":"Nome em miçangas de letra","preco":66,"atacado":[{"qtd":10,"preco":52},{"qtd":20,"preco":48.5},{"qtd":50,"preco":45.5}],"fotos":[],"status":"publicado","novidade":true,"personalizavel":true,"destaque":false,"criado":2},{"id":"pmini","nome":"Mini terço lembrancinha","categoria":"Mini terços e lembrancinhas","descricao":"Dezena delicada com mini crucifixo, embalada em saquinho de organza com tag. Ideal para batizados, primeira comunhão e crisma.","materiais":"Contas de madeira, mini crucifixo, saquinho de organza e tag","medidas":"","cores":"","personalizacao":"Tag personalizada com nome e data","preco":16,"atacado":[{"qtd":10,"preco":12.5},{"qtd":20,"preco":12},{"qtd":50,"preco":11}],"fotos":[],"status":"publicado","novidade":false,"personalizavel":true,"destaque":false,"criado":1}],"atualizado":1794523344078}</script>
+<script type="application/json" id="dados">{"loja":{"whatsapp":"065999024331","instagram":"@tercos.jesusemaria","titulo":"Terços feitos à mão, conta por conta","mensagem":"Cada peça é montada com carinho e oração, do jeito que você imaginou: com nome, nas cores que combinam com você ou para presentear em batizados, crismas e primeiras comunhões.","pagamento":"Pagamento via PIX, crédito e débito","prazo":"Prazo a combinar.","envio":"Enviamos para todo o Brasil."},"pecas":[{"id":"ptradicional","nome":"Terço tradicional de madeira","categoria":"Terços","descricao":"Contas de madeira, crucifixo de metal e medalha de Nossa Senhora. Um terço simples e firme para rezar todos os dias.","materiais":"Contas de madeira 8 mm, crucifixo de metal, medalha de Nossa Senhora","medidas":"","cores":"","personalizacao":"","preco":44,"atacado":[{"qtd":10,"preco":34.5},{"qtd":20,"preco":32},{"qtd":50,"preco":30}],"fotos":[],"status":"publicado","novidade":false,"personalizavel":false,"destaque":true,"criado":3},{"id":"pcristal","nome":"Terço de cristal com nome","categoria":"Terços com nome","descricao":"Contas de cristal com o nome que você escolher em miçangas de letra. Um presente único para quem você ama.","materiais":"Contas de cristal 8 mm, miçangas de letra, crucifixo e medalha","medidas":"","cores":"","personalizacao":"Nome em miçangas de letra","preco":66,"atacado":[{"qtd":10,"preco":52},{"qtd":20,"preco":48.5},{"qtd":50,"preco":45.5}],"fotos":[],"status":"publicado","novidade":true,"personalizavel":true,"destaque":false,"criado":2},{"id":"pmini","nome":"Mini terço lembrancinha","categoria":"Mini terços e lembrancinhas","descricao":"Dezena delicada com mini crucifixo, embalada em saquinho de organza com tag. Ideal para batizados, primeira comunhão e crisma.","materiais":"Contas de madeira, mini crucifixo, saquinho de organza e tag","medidas":"","cores":"","personalizacao":"Tag personalizada com nome e data","preco":16,"atacado":[{"qtd":10,"preco":12.5},{"qtd":20,"preco":12},{"qtd":50,"preco":11}],"fotos":[],"status":"publicado","novidade":false,"personalizavel":true,"destaque":false,"criado":1}],"atualizado":1794541494793}</script>
 <script>
 (function(){
 "use strict";
@@ -176,7 +185,7 @@ function precoPara(p,q){let pr=num(p.preco);for(const f of faixas(p)){if(q>=num(
 function visiveis(){return pecas().filter(p=>filtro==="Todos"||p.categoria===filtro).filter(p=>{if(!termo)return true;return (p.nome+" "+p.descricao+" "+p.categoria+" "+(p.materiais||"")).toLowerCase().includes(termo.toLowerCase())}).sort((a,b)=>(b.destaque?1:0)-(a.destaque?1:0)||(b.criado||0)-(a.criado||0))}
 function categorias(){const u=new Set(pecas().map(p=>p.categoria).filter(Boolean));return ["Todos",...CATS.filter(c=>u.has(c)),...[...u].filter(c=>!CATS.includes(c))]}
 function render(){
-  const L=estado.loja||{}; const zap=zapUrl("Olá! Vi o catálogo da Terços de Jesus e Maria e gostaria de mais informações.");
+  const L=estado.loja||{}; const zap=zapUrl("Olá! Vi o catálogo da Terços de Jesus e Maria e gostaria de mais informações."); const insta=String(L.instagram||"").trim().replace(/^@/,"").replace(/^https?:\/\/(www\.)?instagram\.com\//,"").replace(/\/.*$/,"");
   const lista=visiveis(); const total=pecas().length;
   $("#app").innerHTML=`
   <header class="topo"><div class="wrap">
@@ -202,8 +211,12 @@ function render(){
     <li><b>Chame no WhatsApp</b><span>O botão já envia o nome da peça e a quantidade. Combinamos cores, nome e detalhes.</span></li>
     <li><b>Pague</b><span>${esc(L.pagamento||"Pagamento por Pix.")}</span></li>
     <li><b>Receba</b><span>${esc(L.prazo||"")} ${esc(L.envio||"")}</span></li></ol></div></section>
-  <footer class="rodape"><div class="med"><img src="${LOGO}" alt=""></div><div>Terços de Jesus e Maria, feitos à mão com oração</div>
-    <div>${L.instagram?`<a href="https://instagram.com/${esc(String(L.instagram).replace(/^@/,""))}" target="_blank" rel="noopener">@${esc(String(L.instagram).replace(/^@/,""))}</a>`:""}</div></footer>`;
+  <footer class="rodape"><div class="med"><img src="${LOGO}" alt=""></div>
+    ${(insta||zap)?`<div class="redes">
+      ${insta?`<a class="rede rede-insta" href="https://instagram.com/${esc(insta)}" target="_blank" rel="noopener" aria-label="Instagram @${esc(insta)}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg><span><b>Instagram</b><small>@${esc(insta)}</small></span></a>`:""}
+      ${zap?`<a class="rede rede-zap" href="${zap}" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"/><circle cx="8.5" cy="11" r=".6"/><circle cx="12" cy="11" r=".6"/><circle cx="15.5" cy="11" r=".6"/></svg><span><b>WhatsApp</b><small>Fale com a gente</small></span></a>`:""}
+    </div>`:""}
+    <div>Terços de Jesus e Maria, feitos à mão com oração</div></footer>`;
   document.querySelectorAll("[data-cat]").forEach(b=>b.onclick=()=>{filtro=b.dataset.cat;render();$("#pecas").scrollIntoView({block:"start"})});
   const bi=$("#busca"); bi.oninput=()=>{termo=bi.value;const pos=bi.selectionStart;render();const n=$("#busca");n.focus();n.setSelectionRange(pos,pos)};
   document.querySelectorAll("[data-abrir]").forEach(b=>b.onclick=()=>abrirPeca(b.dataset.abrir));
