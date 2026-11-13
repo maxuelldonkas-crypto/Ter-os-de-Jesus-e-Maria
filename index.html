@@ -157,13 +157,21 @@ dialog::backdrop{background:rgba(18,26,43,.6);backdrop-filter:blur(3px)}
 .rede-insta{background:var(--manto-fundo);color:var(--papel)}
 .rede-zap{background:#1F8F55}
 .rodape .rede{color:#fff}.rodape .rede-insta{color:var(--papel)}
+.selos-linha{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.selos-linha .selo{box-shadow:inset 0 0 0 1px var(--linha)}
+.selos-linha .selo.ouro,.selos-linha .selo.cinza{box-shadow:none}
+.selos-linha + h3{margin-top:8px}
+.galeria .principal{aspect-ratio:auto;border-radius:16px;background:var(--papel);display:flex;align-items:center;justify-content:center;min-height:240px;overflow:hidden}
+.galeria .principal img{width:100%;height:auto;max-height:min(72dvh,700px);object-fit:contain}
+.miniaturas img{object-fit:cover}
+@media (max-width:760px){.galeria .principal{border-radius:14px;min-height:200px}.galeria .principal img{max-height:56dvh}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 </style>
 </head>
 <body>
 <div id="app"></div>
-<script type="application/json" id="dados">{"loja":{"whatsapp":"65999024331","instagram":"@tercos.jesusemaria","titulo":"Terços feitos à mão, conta por conta","mensagem":"Cada peça é montada com carinho e oração, do jeito que você imaginou: com nome, nas cores que combinam com você ou para presentear em batizados, crismas e primeiras comunhões.","pagamento":"Pagamento via PIX, crédito e débito","prazo":"Prazo a combinar.","envio":"Enviamos para todo o Brasil."},"pecas":[{"id":"pmini","nome":"Mini terço lembrancinha","categoria":"Dezenas","descricao":"Dezena delicada com mini crucifixo e fecho, ideal para carregar em todos os momentos, bolsa, cós da calça.","materiais":"Contas leitosa de 8mm com crucifixo de metal","medidas":"","cores":"","personalizacao":"","preco":35,"atacado":[],"fotos":["fotos/pmini-mwfcfl5p1.webp"],"status":"publicado","novidade":true,"personalizavel":true,"destaque":false,"criado":1},{"id":"pmwfbic2lzqlz","nome":"Terço com Medalha de Nossa Senhora Aparecida","categoria":"Terços","descricao":"Contas de cristal de vidro, crucifixo de metal e medalha de Nossa Senhora Aparecida. Terço sofisticado e rico em detalhes","materiais":"Contas de cristal de vidro 8mm, crucifixo de metal, medalha de Nossa Senhora Aparecida","medidas":"","cores":"","personalizacao":"","preco":85,"atacado":[],"fotos":["fotos/pmwfbic2lzqlz-mwfcflwr2.webp"],"status":"publicado","novidade":true,"personalizavel":true,"destaque":false,"criado":1794594968733}],"atualizado":1794596522025,"salvoPor":"maxuelldonkas-crypto"}</script>
+<script type="application/json" id="dados">{"loja":{"whatsapp":"65999024331","instagram":"@tercos.jesusemaria","titulo":"Terços feitos à mão, conta por conta","mensagem":"Cada peça é montada com carinho e oração, do jeito que você imaginou: com nome, nas cores que combinam com você ou para presentear em batizados, crismas e primeiras comunhões.","pagamento":"Pagamento via PIX, crédito e débito","prazo":"Prazo a combinar.","envio":"Enviamos para todo o Brasil."},"pecas":[{"id":"pmini","nome":"Pulseira de cristal Nossa Senhora Aparecida","categoria":"Pulseira","descricao":"Pulseira delicada com mini crucifixo e contas de cristal com passante de Nossa Senhora Aparecida, leve, lindo, delicado e sofisticado.","materiais":"Contas de vidro de 4mm, passante e cruz de metal","medidas":"","cores":"","personalizacao":"","preco":45,"atacado":[],"fotos":["fotos/pmini-mwfd664d1.webp"],"status":"publicado","novidade":false,"personalizavel":false,"destaque":false,"criado":1},{"id":"pmwfbic2lzqlz","nome":"Terço com Medalha de Nossa Senhora Aparecida","categoria":"Terços","descricao":"Contas de cristal de vidro, crucifixo de metal e medalha de Nossa Senhora Aparecida. Terço sofisticado e rico em detalhes","materiais":"Contas de cristal de vidro 8mm, crucifixo de metal, medalha de Nossa Senhora Aparecida","medidas":"","cores":"","personalizacao":"","preco":85,"atacado":[],"fotos":["fotos/pmwfbic2lzqlz-mwfcflwr2.webp"],"status":"publicado","novidade":true,"personalizavel":true,"destaque":false,"criado":1794594968733},{"id":"pmwfcd4emjk8u","nome":"Terço Resinado São José Operário","categoria":"Terços","descricao":"Contas leitosas, crucifixo de metal e entremeio de São José Operário. Terço simples e que traduz o amor e a fé de São José.","materiais":"Contas leitosas de 8mm, crucifixo de metal, entremeio de São José Operário","medidas":"","cores":"","personalizacao":"","preco":75,"atacado":[],"fotos":["fotos/pmwfcd4emjk8u-mwfd672x2.webp"],"status":"publicado","novidade":false,"personalizavel":true,"destaque":false,"criado":1794596405134}],"atualizado":1794597762753,"salvoPor":"maxuelldonkas-crypto"}</script>
 <script>
 (function(){
 "use strict";
@@ -225,7 +233,8 @@ function cartao(p){
   const f=faixas(p)[0];
   const selos=[p.novidade?'<span class="selo ouro">Novidade</span>':"",p.personalizavel?'<span class="selo">Personalizável</span>':"",p.status==="esgotado"?'<span class="selo cinza">Esgotado</span>':""].join("");
   return `<button class="peca" data-abrir="${esc(p.id)}" aria-label="Ver ${esc(p.nome)}">
-    <div class="nicho"><img src="${foto(p.fotos&&p.fotos[0])||placeholder}" alt="${esc(p.nome)}" loading="lazy"><div class="selos">${selos}</div></div>
+    <div class="nicho"><img src="${foto(p.fotos&&p.fotos[0])||placeholder}" alt="${esc(p.nome)}" loading="lazy"></div>
+    ${selos?`<div class="selos-linha">${selos}</div>`:""}
     <h3>${esc(p.nome)}</h3><p class="resumo">${esc(p.descricao||"")}</p>
     <div class="preco">${num(p.preco)?brl(p.preco)+"<small>cada</small>":"Sob consulta"}</div>
     ${f?`<div class="atac">A partir de ${num(f.qtd)} un.: ${brl(f.preco)} cada</div>`:""}</button>`;
@@ -245,6 +254,7 @@ function abrirPeca(id){
       <div class="galeria"><div class="principal"><img src="${fotos[idx]}" alt="${esc(p.nome)}"></div>
       ${fotos.length>1?`<div class="miniaturas">${fotos.map((u,i)=>`<button data-i="${i}" aria-current="${i===idx}" aria-label="Foto ${i+1}"><img src="${u}" alt=""></button>`).join("")}</div>`:""}</div>
       <div class="info"><div class="cat">${esc(p.categoria||"")}</div><h2>${esc(p.nome)}</h2>
+      ${(p.novidade||p.personalizavel||p.status==="esgotado")?`<div class="selos-linha" style="margin:0 0 14px">${p.novidade?'<span class="selo ouro">Novidade</span>':""}${p.personalizavel?'<span class="selo">Personalizável</span>':""}${p.status==="esgotado"?'<span class="selo cinza">Esgotado</span>':""}</div>`:""}
       ${p.descricao?`<p class="desc">${esc(p.descricao)}</p>`:""}
       ${det.length?`<dl class="detalhes">${det.map(d=>`<div><dt>${d[0]}</dt><dd>${esc(d[1])}</dd></div>`).join("")}</dl>`:""}
       ${num(p.preco)?`<div class="tabela-precos">${linhas.map(l=>`<div class="${l.a?"ativo":""}"><span>${l.t}</span><span>${brl(l.v)} cada</span></div>`).join("")}</div>
